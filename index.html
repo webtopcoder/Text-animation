@@ -45,26 +45,63 @@ a {
   width: 100%;
   text-align: center;
   color: transparent;
-  animation: blurFadeInOut 6s infinite ease-in backwards;
-  -webkit-animation: blurFadeInOut 6s infinite ease-in backwards;
-  -moz-animation: blurFadeInOut 6s infinite ease-in backwards;
-  -ms-animation: blurFadeInOut 6s infinite ease-in backwards;
 }
 .sp-container h2.frame-1 {
   
-  -webkit-animation-delay: 1s;
-  -moz-animation-delay: 1s;
-  -ms-animation-delay: 1s;
-  animation-delay: 1s;
+   -webkit-animation: blurFrame1 6s ease-in backwards infinite;
+   -moz-animation: blurFrame1 6s infinite ease-in backwards;
+  -ms-animation: blurFrame1 6s infinite ease-in backwards;
+  animation: blurFrame1 6s ease-in backwards infinite;
 }
 .sp-container h2.frame-2 {
  
-  -webkit-animation-delay: 4s;
-  -moz-animation-delay: 4s;
-  -ms-animation-delay: 4s;
-  animation-delay:4s;
+    -moz-animation: blurFrame2 6s ease-in backwards infinite;
+    -ms-animation: blurFrame2 6s ease-in backwards infinite;
+    -webkit-animation: blurFrame2 6s ease-in backwards infinite;
+  animation: blurFrame2 6s ease-in backwards infinite;
 }
 
+@keyframes blurFrame1 {
+  0% {
+    opacity: 0;
+    text-shadow: 0px 0px 40px #222;
+    transform: scale(1.3);
+  }
+
+  10%,
+  37.5% {
+    opacity: 1;
+    text-shadow: 0px 0px 1px #222;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0;
+    text-shadow: 0px 0px 50px #222;
+    transform: scale(1.3);
+  }
+}
+
+@keyframes blurFrame2 {
+  50% {
+    opacity: 0;
+    text-shadow: 0px 0px 40px #222;
+    transform: scale(1.3);
+  }
+
+  60%,
+  87.5% {
+    opacity: 1;
+    text-shadow: 0px 0px 1px #222;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    text-shadow: 0px 0px 50px #222;
+    transform: scale(1.3);
+  }
+}
 @-webkit-keyframes blurFadeInOut {
   0% {
     opacity: 0;
@@ -89,9 +126,9 @@ a {
     -webkit-transform: scale(1.3);
   }
   50% {
-    opacity: 0.5;
+    opacity: 1;
     text-shadow: 0px 0px 10px #222;
-    -webkit-transform: scale(1.1);
+    -webkit-transform: scale(1);
   }
   100% {
     opacity: 1;
@@ -105,7 +142,7 @@ a {
     -webkit-transform: scale(0);
   }
   50% {
-    opacity: 0.4;
+    opacity: 1;
     -webkit-transform: scale(2);
   }
   100% {
